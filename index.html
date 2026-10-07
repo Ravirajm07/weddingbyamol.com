@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeddingByAmol — Open-source wedding technology platform</title>
+  <meta name="description" content="WeddingByAmol is an early-stage open-source wedding technology developer platform building hosted cloud services for modern wedding experiences." />
+  <meta name="theme-color" content="#111111" />
+  <meta property="og:title" content="WeddingByAmol — Open-source wedding technology platform" />
+  <meta property="og:description" content="An early-stage open-source developer platform building hosted cloud services for modern wedding experiences." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://weddingbyamol.com/" />
+  <link rel="canonical" href="https://weddingbyamol.com/" />
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --panel: rgba(255,255,255,.055);
+      --panel-strong: rgba(255,255,255,.09);
+      --text: #f5f5f4;
+      --muted: #a8a29e;
+      --line: rgba(255,255,255,.10);
+      --accent: #f4c95d;
+      --accent-2: #f59e9e;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(244,201,93,.14), transparent 28rem),
+        radial-gradient(circle at 90% 22%, rgba(245,158,158,.11), transparent 25rem),
+        var(--bg);
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.02em; }
+    .mark {
+      width: 34px; height: 34px; border-radius: 11px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #171717; font-weight: 900;
+      box-shadow: 0 10px 35px rgba(244,201,93,.18);
+    }
+    .navlinks { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+    .navlinks a:hover { color: var(--text); }
+    .hero { padding: 96px 0 72px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 11px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--panel);
+      color: #d6d3d1; font-size: 13px;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #5ee6a8; box-shadow: 0 0 0 5px rgba(94,230,168,.08); }
+    h1 {
+      max-width: 880px;
+      margin: 24px 0 22px;
+      font-size: clamp(46px, 8vw, 92px);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #fff 0%, #f4c95d 55%, #f59e9e 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lead { max-width: 720px; color: #c7c2bd; font-size: clamp(18px, 2.2vw, 22px); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      padding: 12px 17px; border-radius: 12px; border: 1px solid var(--line);
+      font-weight: 700; font-size: 14px; transition: .2s ease;
+    }
+    .btn.primary { background: #f5f5f4; color: #111; border-color: #f5f5f4; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.26); }
+    .strip {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      margin-top: 62px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
+      background: rgba(255,255,255,.025);
+    }
+    .stat { padding: 22px; min-height: 120px; }
+    .stat + .stat { border-left: 1px solid var(--line); }
+    .stat b { display: block; margin-bottom: 6px; font-size: 17px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+    section { padding: 74px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 42px; margin-bottom: 34px; }
+    .kicker { color: var(--accent); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 7px 0 0; font-size: clamp(32px, 5vw, 52px); line-height: 1.05; letter-spacing: -.045em; }
+    .section-copy { color: var(--muted); max-width: 650px; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .card {
+      padding: 24px; min-height: 220px; border: 1px solid var(--line); border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+    .card .num { color: #79716a; font-size: 12px; font-weight: 800; }
+    .card h3 { margin: 44px 0 8px; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .codebox {
+      border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #070708;
+      box-shadow: 0 20px 70px rgba(0,0,0,.25);
+    }
+    .codebar { display:flex; align-items:center; gap:7px; padding: 14px 16px; border-bottom:1px solid var(--line); }
+    .codebar i { width:9px; height:9px; border-radius:50%; background:#3f3f46; display:block; }
+    pre { margin:0; padding: 24px; overflow:auto; color:#d6d3d1; font: 14px/1.8 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .gold { color: #f4c95d; } .pink { color:#f59e9e; } .green { color:#5ee6a8; }
+    .roadmap { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+    .step { padding: 20px; border-radius: 16px; border:1px solid var(--line); background:var(--panel); }
+    .step small { color:var(--accent); font-weight:800; }
+    .step h3 { font-size:17px; margin:28px 0 7px; }
+    .step p { color:var(--muted); font-size:13px; margin:0; }
+    .cta {
+      padding: 54px; border-radius: 24px; border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(244,201,93,.12), rgba(245,158,158,.08));
+    }
+    .cta h2 { max-width: 720px; }
+    footer { padding: 32px 0 46px; color:var(--muted); font-size:13px; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width: 780px) {
+      .navlinks { display:none; }
+      .hero { padding-top:72px; }
+      .strip, .grid, .roadmap, .section-head { grid-template-columns:1fr; }
+      .stat + .stat { border-left:0; border-top:1px solid var(--line); }
+      .cta { padding:30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/" aria-label="WeddingByAmol home">
+        <span class="mark">W</span>
+        <span>WeddingByAmol</span>
+      </a>
+      <div class="navlinks">
+        <a href="#platform">Platform</a>
+        <a href="#open-source">Open Source</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="https://github.com/Ravirajm07/weddingbyamol.com">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <div class="eyebrow"><span class="dot"></span> Early-stage • Open source • Hosted-first</div>
+        <h1>Wedding technology, <span class="gradient-text">built like a developer platform.</span></h1>
+        <p class="lead">
+          WeddingByAmol is an early-stage open-source platform building hosted cloud services for modern wedding experiences—starting with fast, elegant web delivery and growing toward reusable event, media, and automation workflows.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/Ravirajm07/weddingbyamol.com">View source on GitHub</a>
+          <a class="btn" href="#roadmap">See the roadmap</a>
+        </div>
+
+        <div class="strip">
+          <div class="stat"><b>Open-source core</b><span>Transparent codebase with a public development path.</span></div>
+          <div class="stat"><b>Cloud-hosted direction</b><span>Designed to evolve from a static launch surface into hosted services.</span></div>
+          <div class="stat"><b>Developer-first foundation</b><span>Simple deployment, composable features, and automation-friendly architecture.</span></div>
+        </div>
+      </header>
+
+      <section id="platform">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Platform</div>
+            <h2>From a website to a hosted product layer.</h2>
+          </div>
+          <p class="section-copy">
+            The project is being positioned as infrastructure for wedding-focused digital experiences rather than a one-off site. The initial public surface is intentionally lightweight; future capabilities can be shipped as modular hosted services without changing the core identity.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>Hosted experiences</h3>
+            <p>Deploy polished event pages, wedding microsites, galleries, schedules, and guest-facing experiences from a common platform.</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>Media workflows</h3>
+            <p>Create a foundation for image delivery, album workflows, asset organization, and future intelligent media tooling.</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>Automation-ready</h3>
+            <p>Structure the project so APIs, notifications, integrations, and AI-assisted features can be added without rebuilding the product from scratch.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="open-source">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Open source</div>
+            <h2>Public core. Hosted roadmap.</h2>
+          </div>
+          <p class="section-copy">
+            WeddingByAmol keeps the starting point inspectable and easy to deploy. The public repository acts as the product's source of truth while the hosted layer can evolve into managed services, integrations, and production tooling.
+          </p>
+        </div>
+        <div class="codebox" role="region" aria-label="Project positioning">
+          <div class="codebar"><i></i><i></i><i></i></div>
+          <pre><span class="gold">project</span>: WeddingByAmol
+<span class="gold">stage</span>: early-stage
+<span class="gold">model</span>: open-source core + hosted cloud services
+<span class="gold">focus</span>:
+  - wedding web experiences
+  - media and event workflows
+  - reusable integrations
+  - <span class="pink">AI-ready automation</span>
+<span class="gold">source</span>: <span class="green">github.com/Ravirajm07/weddingbyamol.com</span></pre>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Roadmap</div>
+            <h2>Build the smallest credible platform first.</h2>
+          </div>
+          <p class="section-copy">
+            The goal is not to pretend the product is mature. The credible path is to ship a public hosted surface, document the direction, then add real product capabilities incrementally.
+          </p>
+        </div>
+        <div class="roadmap">
+          <div class="step"><small>NOW</small><h3>Public landing page</h3><p>Hosted identity, project positioning, and open-source entry point.</p></div>
+          <div class="step"><small>NEXT</small><h3>Core web modules</h3><p>Reusable wedding pages, event information, galleries, and content blocks.</p></div>
+          <div class="step"><small>LATER</small><h3>Hosted services</h3><p>Accounts, storage, APIs, deployment workflows, and managed integrations.</p></div>
+          <div class="step"><small>EXPLORE</small><h3>AI-assisted tooling</h3><p>Optional intelligent media, search, curation, and workflow automation.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta">
+          <div class="kicker">Build in public</div>
+          <h2>An open-source wedding platform, starting small and shipping toward the cloud.</h2>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/Ravirajm07/weddingbyamol.com">Explore the repository</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-row">
+        <span>© 2026 WeddingByAmol. Early-stage open-source project.</span>
+        <span>Built in public • Hosted on modern cloud infrastructure</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
